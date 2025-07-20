@@ -1,12 +1,16 @@
 {
-  "name": "ytclone",
+  "name": "youtube-clone",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "homepage": "https://Bhavya130905.github.io/Youtube-Clone",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build --base=/Youtube-Clone/",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "clean-deploy": "rm -rf dist && npm run build && npm run deploy"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -14,13 +18,33 @@
     "bootstrap": "^5.3.2",
     "gh-pages": "^6.3.0",
     "lucide-react": "^0.525.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.1.3"
+    "react-redux": "^8.1.3",
+    "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.18",
     "@vitejs/plugin-react": "^4.0.3",
-    "vite": "^7.0.4"
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.8",
+    "vite-plugin-svgr": "^3.3.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
