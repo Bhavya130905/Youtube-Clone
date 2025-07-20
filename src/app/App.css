@@ -1,0 +1,370 @@
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #f6fbff 0%, #e2edfa 100%);
+  min-height: 100vh;
+  color: #23334d;
+}
+
+/* Layout Container */
+.app-container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 34px;
+  padding-bottom: 21px;
+  border-bottom: 2px solid #e4edf7;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #0375d8;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 0 0 14px 0;
+  text-shadow: 0 2px 10px #90caf915;
+  transition: color .22s;
+}
+
+.search-container {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  max-width: 840px;
+}
+
+/* Main Content Area */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* Video Player Section */
+.video-player-container {
+  background: rgba(255,255,255,0.98);
+  border-radius: 18px;
+  box-shadow: 0 7px 32px 0 #038fd21b;
+  padding: 30px 24px 22px 24px;
+  min-height: 360px;
+  animation: fadeIn 0.62s;
+}
+
+/* Video List Section */
+.video-list-container {
+  background: rgba(250,251,253,0.98);
+  border-radius: 15px;
+  box-shadow: 0 3px 28px 0 #9acbeb18;
+  padding: 20px 15px 15px 15px;
+  max-height: 82vh;
+  overflow-y: auto;
+}
+
+/* Voice Command Section */
+.voice-command-panel {
+  background: linear-gradient(120deg, #f7fbfe 60%, #edf0ff 100%);
+  border-radius: 20px;
+  padding: 28px 24px;
+  margin-bottom: 28px;
+  border: 2px solid #cdeaff;
+  box-shadow: 0 2px 12px #b9e2fa29;
+  text-align: center;
+  position: relative;
+  animation: fadeInDown .52s;
+}
+
+.voice-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 36px;
+  background: linear-gradient(120deg, #2186eb 0%, #12d2fc 90%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.25s, transform 0.13s;
+  box-shadow: 0 3px 20px 0 #08d1fc33;
+  margin: 0 auto 12px auto;
+  min-width: 220px;
+  min-height: 54px;
+  position: relative;
+  z-index: 1;
+}
+
+.voice-btn:active {
+  transform: scale(0.96);
+}
+
+.voice-btn:hover {
+  background: linear-gradient(100deg, #0e65b4 0%, #00b5d9 100%);
+  box-shadow: 0 7px 26px #c2e4ff50;
+}
+
+.voice-btn.listen {
+  background: linear-gradient(90deg, #ff4476 0%, #ffbd3a 100%);
+}
+
+.voice-btn svg {
+  font-size: 26px !important;
+}
+
+/* Voice Status Indicator */
+.voice-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 9px;
+  font-size: 1.01rem;
+  font-weight: 500;
+}
+
+.status-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #bbc7dd;
+  box-shadow: 0 1px 5px #007fff24;
+  position: relative;
+}
+
+.status-indicator.active {
+  background: #06dc9d;
+  box-shadow: 0 0 0 10px #06dc9d25;
+  animation: pulse 1.3s infinite;
+}
+.status-indicator.error {
+  background: #ff5252;
+}
+
+.voice-status-blip {
+  padding: 3.8px 19px;
+  border-radius: 11px;
+  background: #f0f5ffee;
+  color: #0075ca;
+  margin: 10px 0 0 0;
+  font-size: 1.07em;
+  font-weight: 600;
+  letter-spacing: .006em;
+  display: inline-block;
+  transition: background .12s, color .15s;
+}
+
+.voice-status-blip.off {
+  background: #ffeeec;
+  color: #ff2367;
+}
+
+/* Voice Language Toggle */
+.language-toggle {
+  background: #eaf6fd;
+  color: #2d82db;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  margin-right: 10px;
+  box-shadow: 0 1px 4px 0 #12a4e81b;
+  cursor: pointer;
+  transition: background 0.20s;
+}
+
+.language-toggle:hover {
+  background: #d7ecff;
+}
+
+/* Command History: Timeline Style */
+.command-display {
+  background: rgba(255,255,255,0.96);
+  border-radius: 13px;
+  padding: 18px 20px 10px 20px;
+  margin-top: 25px;
+  min-height: 70px;
+  box-shadow: 0 1px 10px rgba(30,160,240,0.04);
+  position: relative;
+  border-left: 5px solid #137be5;
+}
+
+.command-text {
+  font-weight: 600;
+  color: #20395a;
+  margin-bottom: 4px;
+  font-size: 1.08em;
+}
+.command-timestamp {
+  font-size: 0.92em;
+  color: #82a3ca;
+  margin-bottom: 7px;
+  letter-spacing: .01em;
+}
+
+/* Video List Items */
+.video-item {
+  display: flex;
+  gap: 16px;
+  padding: 13px 8px;
+  border-radius: 10px;
+  margin-bottom: 13px;
+  cursor: pointer;
+  background: transparent;
+  transition: box-shadow 0.16s, background 0.16s;
+}
+
+.video-item:hover, .video-item:focus {
+  background: #edf7ff;
+  box-shadow: 0 3px 12px #059fee0e;
+}
+
+.video-thumbnail {
+  width: 124px;
+  height: 74px;
+  border-radius: 6px;
+  object-fit: cover;
+  transition: box-shadow .14s;
+  box-shadow: 0 1px 7px #b6dbff33;
+}
+
+.video-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #15283b;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-channel {
+  font-size: 0.90rem;
+  color: #7b93c4;
+  font-weight: 500;
+}
+
+/* Replace the existing .video-list-container styles with: */
+.video-list-container {
+  background: rgba(250,251,253,0.98);
+  border-radius: 15px;
+  box-shadow: 0 3px 28px 0 #9acbeb18;
+  padding: 20px 15px 15px 15px;
+  height: auto; /* Changed from max-height */
+  overflow-y: auto;
+  position: sticky;
+  top: 20px;
+}
+
+/* Update the content-wrapper grid */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.video-player-container {
+  /* existing styles */
+  min-height: 500px; /* Add this */
+}
+
+@media (max-width: 800px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .video-list-container {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {transform:scale(1);}
+  50% {transform:scale(1.14);}
+  100% {transform:scale(1);}
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100%{opacity:1;}
+}
+@keyframes fadeInDown {
+  0% {opacity:0; transform: translateY(-30px);}
+  100%{opacity:1;  transform: translateY(0);}
+}
+
+/* Responsive Design */
+@media (max-width: 1020px) {
+  .content-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .app-container { padding: 16px 7px;}
+}
+@media (max-width: 800px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .video-list-container,
+  .video-player-container {
+    padding: 14px 7px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-card, .app-container, .voice-command-panel  {
+    padding: 8px;
+  }
+  .header h1 { font-size: 1.65rem;}
+  .video-list-container,
+  .video-player-container {
+    padding: 8px 2px;
+    min-width: unset;
+  }
+  .command-display {
+    padding: 12px 6px 6px 15px;
+  }
+  .voice-btn {
+    width: 100%;
+    min-width: 0;
+    font-size: 1em;
+    padding: 12px;
+  }
+}
+
+/* Loading State */
+.loading-spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(24,85,238,0.13);
+  border-radius: 50%;
+  border-top-color: #47b0ff;
+  animation: spin 1s ease-in-out infinite;
+  margin: 8px auto 0 auto;
+}
+@keyframes spin {
+  to { transform: rotate(360deg);}
+}
