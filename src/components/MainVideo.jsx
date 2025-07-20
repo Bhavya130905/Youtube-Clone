@@ -7,7 +7,7 @@ const MainVideo = ({ mainVideo, stats, channel, comments = [] }) => {
   const videoSrc = `https://www.youtube.com/embed/${mainVideo?.id?.videoId || ''}`;
 
   return (
-    <Container>
+      <Container style={{ maxHeight: '100%', overflow: 'auto' }}>
       <iframe
         src={videoSrc}
         width="100%"

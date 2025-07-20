@@ -124,12 +124,13 @@ const App = () => {
 
         {/* Video List Section */}
         <div className="video-list-container">
-          <h5>{currentVideoId ? 'Related Videos' : 'Search Results'}</h5>
-          <List
-          list={searchData?.items || []}
-          setMainVideo={handleVideoSelect}
-          language={searchLanguage}
-          isLoading={isSearchLoading}/>
+        <h5>{currentVideoId ? 'Related Videos' : 'Search Results'}</h5>
+        <List
+        list={searchData?.items || []}
+        setMainVideo={handleVideoSelect}
+        language={searchLanguage}
+        isLoading={isSearchLoading}
+        />
         </div>
       </div>
     </Container>
